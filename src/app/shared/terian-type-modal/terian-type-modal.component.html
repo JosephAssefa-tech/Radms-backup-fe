@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">TerrianName English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.TerrianName.invalid && validateForm.controls.TerrianName.touched ? 'error' : ''">
+        <input nz-input formControlName="TerrianName" placeholder="TerrianName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >PedestrianMovementvName</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="TerrianNameAm" placeholder="TerrianName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>TerrianName Afan Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="TerrianNameOr" placeholder="TerrianName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >TerrianName Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="TerrianNameSo" placeholder="TerrianName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >TerrianName Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="TerrianNameTi" placeholder="TerrianName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >TerrianName Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="TerrianNameAf" placeholder="TerrianName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

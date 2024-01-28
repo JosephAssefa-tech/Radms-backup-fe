@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">pavementName English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.pavementName.invalid && validateForm.controls.pavementName.touched ? 'error' : ''">
+        <input nz-input formControlName="pavementName" placeholder="pavementName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >pavementName</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="pavementNameAm" placeholder="pavementName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>pavementName Afan Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="pavementNameOr" placeholder="pavementName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >pavementName Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="pavementNameSo" placeholder="pavementName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >pavementName Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="pavementNameTi" placeholder="pavementName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >pavementName Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="pavementNameAf" placeholder="pavementName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

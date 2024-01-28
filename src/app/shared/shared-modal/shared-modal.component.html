@@ -1,0 +1,52 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzRequired]="true">Region English</nz-form-label>
+    <nz-form-control [nzErrorTip]="'Please input region name!'"
+                     [nzValidateStatus]="validateForm.controls.regionName.invalid && validateForm.controls.regionName.touched ? 'error' : ''">
+      <input nz-input formControlName="regionName" placeholder="region name">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >የክልል ስም</nz-form-label>
+    <nz-form-control                     >
+      <input nz-input formControlName="regionNameAm" placeholder="የክልል ስም">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label>Region Afan Oroma</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="regionNameOr" placeholder="region name">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >Region Somalia</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="regionNameSo" placeholder="region name">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >Region Tigiray</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="regionNameTi" placeholder="region name">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >Region Afar</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="regionNameAf" placeholder="region name">
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+  <!-- <button nz-button nzType="primary" (click)="onSave()">
+    {{ isEditMode ? 'Update' : 'Add' }}
+  </button> -->
+</form>

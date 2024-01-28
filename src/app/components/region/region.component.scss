@@ -1,0 +1,49 @@
+.custom-confirm-modal .ant-modal-confirm-body {
+  text-align: center !important;
+}
+
+.custom-confirm-modal .ant-modal-confirm-btns {
+  display: flex !important;
+  justify-content: center !important;
+}
+::ng-deep .custom-confirm-modal .ant-modal-confirm-btns .ant-btn-danger {
+  background-color: red;
+  color: white;
+}
+.delete {
+  display: inline-block;
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.delete:hover {
+  background-color: darkred;
+}
+
+.delete-icon {
+  color: white;
+  margin-right: 5px;
+}
+
+.delete-text {
+  color: white !important;
+}
+.edit-button {
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon-edit {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  color: white;
+}
+.button-spacing {
+  padding-right: 10px; /* Adjust the margin value to set the desired spacing */
+}

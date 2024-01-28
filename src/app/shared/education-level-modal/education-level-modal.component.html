@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">educationLevelName English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.educationLevelName.invalid && validateForm.controls.educationLevelName.touched ? 'error' : ''">
+        <input nz-input formControlName="educationLevelName" placeholder="educationLevelName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >educationLevelName Name</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="educationLevelNameAm" placeholder="educationLevelName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>educationLevelName Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="educationLevelNameOr" placeholder="educationLevelName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >educationLevelName  Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="educationLevelNameSo" placeholder="educationLevelName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >educationLevelName Name Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="educationLevelNameTi" placeholder="educationLevelName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >educationLevelName NameAfar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="educationLevelNameAf" placeholder="educationLevelName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  z

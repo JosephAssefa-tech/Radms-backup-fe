@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">VictimMovementType English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.victimMovementType.invalid && validateForm.controls.victimMovementType.touched ? 'error' : ''">
+        <input nz-input formControlName="victimMovementType" placeholder="victimMovementType">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >VictimMovementType</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="victimMovementTypeAm" placeholder="victimMovementType">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>VictimMovementType Afan Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="victimMovementTypeOr" placeholder="victimMovementType">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >VictimMovementTypeSomalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="victimMovementTypeSo" placeholder="victimMovementType">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >VictimMovementTypeTigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="victimMovementTypeTi" placeholder="victimMovementType">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >VictimMovementType Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="victimMovementTypeAf" placeholder="victimMovementType">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

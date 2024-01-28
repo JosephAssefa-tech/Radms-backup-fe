@@ -1,0 +1,27 @@
+
+<button class="add-region" nz-button nzType="primary" (click)="showModal('Add woreda')">Add Woreda</button>
+<nz-table #middleTable nzSize="middle" [nzData]="woredas">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Woreda Names</th>
+      <th>Zone Names</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let woreda of woredas">
+      <td>{{ woreda.woredaId }}</td>
+      <td>{{ woreda.woredaName }}</td>
+      <td>{{ woreda.zone?.zoneName }}</td>
+      <td>
+        <button class="edit-button"   (click)="editWoreda(woreda)">
+          <i class="icon-edit"></i>
+          Edit</button> 
+          <span class="button-spacing"></span>
+        <a class="delete" (click)="openDeleteConfirmation(woreda.woredaId)">  <i nz-icon nzType="delete" class="delete-icon"></i>
+          <span class="delete-text">Delete</span></a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

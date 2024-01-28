@@ -1,0 +1,31 @@
+
+<button class="add-region" nz-button nzType="primary" (click)="showModal('Add Air Conditions')">Add Air Conditions</button>
+<nz-table #middleTable nzSize="middle" [nzData]="airConditions">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Air Condition Names</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let airCondition of airConditions">
+      <td>{{ airCondition.airConditionId }}</td>
+      <td>{{ airCondition.airConditionName }}</td>
+      <td>
+
+        <button class="edit-button"   (click)="editAirConditioinRow(airCondition)">
+          <i class="icon-edit"></i>
+          Edit</button> 
+          <span class="button-spacing"></span>
+
+        <!-- <a  (click)="editRegion(region.regionId)">Edit</a> | -->
+        <a class="delete" (click)="openDeleteConfirmation(airCondition.airConditionId)">
+          <i nz-icon nzType="delete" class="delete-icon"></i>
+          <span class="delete-text">Delete</span>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+
+</nz-table>

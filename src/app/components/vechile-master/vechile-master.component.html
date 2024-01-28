@@ -1,0 +1,27 @@
+
+<button class="add-region" nz-button nzType="primary" (click)="showModal('Add Vechiles')">Add Vechile Master</button>
+<nz-table #middleTable nzSize="middle" [nzData]="vechiles">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Vechile Master Names</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vechile of vechiles">
+      <td>{{ vechile.vehicleId }}</td>
+      <td>{{ vechile.vehicleName }}</td>
+      <td>
+
+        <button class="edit-button"   (click)="onEditRow(vechile)">      <i class="icon-edit"></i>
+          Edit</button> 
+          <span class="button-spacing"></span>
+        <!-- <a  (click)="editRegion(region.regionId)">Edit</a> | -->
+        <a class="delete" (click)="openDeleteConfirmation(vechile.vehicleId)"><i nz-icon nzType="delete" class="delete-icon"></i>
+          <span class="delete-text">Delete</span></a>
+      </td>
+    </tr>
+  </tbody>
+
+</nz-table>

@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Air Condition English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.airConditionName.invalid && validateForm.controls.airConditionName.touched ? 'error' : ''">
+        <input nz-input formControlName="airConditionName" placeholder="airConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >air ConditionName</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="airConditionNameAm" placeholder="airConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>air ConditionName Afan Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="airConditionNameOr" placeholder="airConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >air ConditionName Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="airConditionNameSo" placeholder="airConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >airConditionNameTigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="airConditionNameTi" placeholder="airConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >airConditionName Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="airConditionNameAf" placeholder="airConditionName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

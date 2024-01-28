@@ -1,0 +1,115 @@
+<div style="background-color: white;padding:15px" nzSpan="6">
+    <form (ngSubmit)="onSubmit()"  [formGroup]="myForm" >
+
+    <h3><b>Road Involved</b></h3>
+
+
+
+
+  <div nz-row style="display: flex;">
+    <!-- <div nz-col  nzSpan="6" ><label>Accident</label><br/>
+      <nz-select formControlName="accidentId"
+      [(ngModel)]="selectedAccident">
+      <ng-container  *ngFor="let option of accident">
+        <nz-option
+        [nzLabel]="option.accidentLocalName"
+        [nzValue]="option.accidentId"
+        ></nz-option>
+      </ng-container>
+
+
+      </nz-select>
+     </div> -->
+
+    <div nz-col  nzSpan="6" ><label>Road Name</label><br/>
+      <nz-select formControlName="hid"
+      [(ngModel)]="selectedHighway">
+
+        <nz-option *ngFor="let option of highway$ | async"
+        [nzLabel]="option.hname"
+        [nzValue]="option.hid"
+        ></nz-option>
+
+
+
+      </nz-select>
+     </div>
+
+
+
+    <div nz-col  nzSpan="6" ><label>Pavement Type</label><br/>
+      <nz-select formControlName="pavementTypeId"
+      [(ngModel)]="selectedPavementType">
+
+        <nz-option
+        *ngFor="let option of pavements$ | async" [nzValue]="option.pavementTypeId" [nzLabel]="option.pavementName"
+
+        ></nz-option>
+
+
+
+      </nz-select>
+     </div>
+
+
+
+
+    <div nz-col  nzSpan="6" ><label>Road Surface Condition</label><br/>
+      <nz-select formControlName="roadSurfaceId"
+      [(ngModel)]="selectedRoadSurfaceCondition">
+
+        <nz-option *ngFor="let option of roadSurfaceCondition$ | async"
+        [nzLabel]="option.roadSurfaceName"
+        [nzValue]="option.roadSurfaceId"
+        ></nz-option>
+
+
+
+      </nz-select>
+     </div>
+
+
+
+
+    <div nz-col  nzSpan="6" ><label>Carriage way Type</label><br/>
+      <nz-select formControlName="roadCarriagewayId"
+      [(ngModel)]="selectedCarriageWayType">
+
+        <nz-option  *ngFor="let option of carriageWayType$ | async"
+        [nzLabel]="option.roadCarriagewayName"
+        [nzValue]="option.roadCarriagewayId"
+        ></nz-option>
+
+
+
+      </nz-select>
+     </div>
+
+
+
+ </div>
+
+
+
+
+
+ <div nz-row style="display: flex; height: 20px;" ></div>
+
+
+
+
+
+
+  <div nz-row style="display: flex;justify-content: space-between;">
+    <div nz-col nzSpan="6"></div>
+    <div nz-col nzSpan="6"> </div>
+    <div nz-col nzSpan="6"> </div>
+    <div nz-col nzSpan="6"  style="display: flex;">
+      <app-button (click)="AccidentPage()" [buttonText]="'Back'" style="padding-right:15px;"></app-button>
+    <app-button  [buttonText]="'Next'" type="submit" [isDisabled]="!isFormValid()"></app-button>
+    </div>
+  </div>
+  <!-- (click)="sucessNotification('Sucess')" -->
+  </form>
+
+  </div>

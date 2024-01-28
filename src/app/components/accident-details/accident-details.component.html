@@ -1,0 +1,360 @@
+<!-- <div class="language"><p>Please select Language</p>
+<div>  <button nz-button nzType="default" (click)="switchLanguage('english')">English</button></div>
+
+  <div><button nz-button nzType="primary" (click)="switchLanguage('amharic')">Amharic</button></div>
+</div> -->
+<div style="background-color: white;padding:15px" nzSpan="6">
+  <div style="display: flex;justify-content: space-between;">
+    <h3><b>Accident Detail</b></h3>
+    <div class="clearfix">
+      <nz-upload
+        nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+        nzListType="picture"
+   >
+   <!-- [(nzFileList)]="fileList1"   please add this line of code for listing the images on the above tag-->
+        <button nz-button>
+          <span nz-icon nzType="upload"></span>
+          Upload
+        </button>
+      </nz-upload>
+    </div>
+  </div>
+  <form (ngSubmit)="onSubmit()"  [formGroup]="myForm" >
+
+
+  <div nz-row style="display: flex;">
+    <div nz-col  nzSpan="6" >
+      <div> <label>Lat</label><input  formControlName="lat" nz-input placeholder="Basic usage"   /></div>
+
+
+    </div>
+    <div nz-col  nzSpan="6" >
+      <div > <label>Long</label><input  formControlName="long" nz-input placeholder="Basic usage"   /></div>
+
+    </div>
+  </div>
+
+
+  <div nz-row style="display: flex;">
+    <div nz-col  nzSpan="6" ><label>Date</label><br/>
+    <nz-date-picker formControlName="dateAndTime" [(ngModel)]="dateAndTime" [nzRenderExtraFooter]="plainFooter" nzShowTime></nz-date-picker>
+</div>
+<div nz-col  nzSpan="6" ><label>Investigator Name</label><br/>
+  <input style="width:200px !important"  nz-input placeholder="Invistigator name" formControlName="piname" [(ngModel)]="piname" />
+</div>
+     <div nz-col  nzSpan="6" ><label>Police Record Number</label><br/>
+      <input style="width:200px !important" formControlName="policeRecordNumber" nz-input placeholder="Basic usage" [(ngModel)]="policeRecordNumber" />
+  </div>
+    <!-- (ngModelChange)=
+  "OnPoliceStationSelected()" -->
+<div nz-col  nzSpan="6" ><label>Police Station</label><br/>
+  <nz-select formControlName="psid"
+
+  [(ngModel)]="policeOption"   >
+    <nz-option
+    *ngFor="let option of polices$ | async" [nzValue]="option.psid" [nzLabel]="option.psname"
+
+    ></nz-option>
+
+  </nz-select>
+ </div>
+  </div>
+
+
+
+  <div nz-row style="display: flex;">
+    <div nz-col  nzSpan="6" ><label>Region</label><br/>
+      <nz-select formControlName="regionId"
+      [(ngModel)]="regionId"
+       >
+        <nz-option       *ngFor="let option of regionMasters$ | async"
+        [nzLabel]="option.regionName"
+        [nzValue]="option.regionId"
+        ></nz-option>
+
+      </nz-select>
+     </div>
+    <div nz-col  nzSpan="6" ><label>Zone</label><br/>
+      <nz-select [(ngModel)]="zoneId" formControlName="zoneId">
+        <nz-option       *ngFor="let option of zoneMasters$ | async"
+        [nzLabel]="option.zoneName"
+        [nzValue]="option.zoneId"
+        ></nz-option>
+      </nz-select></div>
+    <div nz-col nzSpan="6" >Woreda<label></label><br/>
+      <nz-select [(ngModel)]="woredaId" formControlName="woredaId">
+        <nz-option       *ngFor="let option of woredaMasters$ | async"
+        [nzLabel]="option.woredaName"
+        [nzValue]="option.woredaId"
+        ></nz-option>
+      </nz-select>
+    </div>
+    <div nz-col nzSpan="6" >City<label></label><br/>
+      <nz-select [(ngModel)]="cityId" formControlName="cityId">
+        <nz-option       *ngFor="let option of cityMasters$ | async"
+        [nzLabel]="option.cityName"
+        [nzValue]="option.cityId"
+        ></nz-option>
+      </nz-select>
+    </div>
+    <nz-divider></nz-divider>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div nz-row style="display: flex;">
+    <div nz-col  nzSpan="6" ><label>Subcity</label><br/>
+      <nz-select formControlName="subCityId"
+      [(ngModel)]="subCityId"    >
+        <nz-option       *ngFor="let option of subCityList$ | async"
+        [nzLabel]="option.subCityName"
+        [nzValue]="option.subCityId"
+        ></nz-option>
+
+      </nz-select>
+     </div>
+
+    <div nz-col  nzSpan="6" ><label>Kebele Name</label><br/>
+      <input style="width:200px !important" formControlName="kebeleName" nz-input placeholder="Basic usage" [(ngModel)]="kebeleName" />
+  </div>
+
+
+
+  <div nz-col  nzSpan="6" ><label>Accident Type</label><br/>
+    <nz-select formControlName="accidentTypeId"
+    [(ngModel)]="accidentTypeId">
+      <nz-option       *ngFor="let option of accidentTypes$ | async"
+      [nzLabel]="option.accidentType"
+      [nzValue]="option.accidentTypeId"
+      ></nz-option>
+
+    </nz-select>
+   </div>
+   <div nz-col  nzSpan="6" ><label>Weather Condition</label><br/>
+    <nz-select [(ngModel)]="weatherCondId" formControlName="weatherCondId">
+      <nz-option       *ngFor="let option of weatherConditions$ | async"
+      [nzLabel]="option.weatherCondName"
+      [nzValue]="option.weatherCondId"
+      ></nz-option>
+    </nz-select></div>
+
+
+  </div>
+
+
+
+
+
+
+
+<div nz-row style="display: flex;">
+
+
+  <div nz-col nzSpan="6" >Accident Serverity<label></label><br/>
+    <nz-select [(ngModel)]="severityId" formControlName="severityId">
+      <nz-option       *ngFor="let option of accidentSeverity$ | async"
+      [nzLabel]="option.severityType"
+      [nzValue]="option.severityId"
+      ></nz-option>
+    </nz-select>
+  </div>
+
+  <div nz-col nzSpan="6" >Road Name<label></label><br/>
+    <nz-select [(ngModel)]="hid" formControlName="hid">
+      <nz-option       *ngFor="let option of highwayNames$ | async"
+      [nzLabel]="option.hname"
+      [nzValue]="option.hid"
+      ></nz-option>
+    </nz-select>
+  </div>
+
+  <div nz-col nzSpan="6" >Highway type<label></label><br/>
+    <nz-select [(ngModel)]="highwayTypeId" formControlName="highwayTypeId">
+      <nz-option       *ngFor="let option of highwayTypes$ | async"
+      [nzLabel]="option.htypeName"
+      [nzValue]="option.htypeId"
+      ></nz-option>
+    </nz-select>
+  </div>
+  <div nz-col nzSpan="6" >Payment type<label></label><br/>
+    <nz-select [(ngModel)]="pavementTypeId" formControlName="pavementTypeId">
+      <nz-option       *ngFor="let option of pavementTypes$ | async"
+      [nzLabel]="option.pavementName"
+      [nzValue]="option.pavementTypeId"
+      ></nz-option>
+    </nz-select>
+  </div>
+
+  <div nz-col nzSpan="6" >Collision type<label></label><br/>
+    <nz-select [(ngModel)]="collisionTypeId" formControlName="collisionTypeId">
+      <nz-option       *ngFor="let option of collisionTypes$ | async"
+      [nzLabel]="option.collisionTypeName"
+      [nzValue]="option.collisionTypeId"
+      ></nz-option>
+    </nz-select>
+  </div>
+
+
+  <div nz-col nzSpan="6" >Impact type<label></label><br/>
+    <nz-select [(ngModel)]="impactTypeId" formControlName="impactTypeId">
+      <nz-option       *ngFor="let option of impactTypes$ | async"
+      [nzLabel]="option.impactTypeName"
+      [nzValue]="option.impactTypeId"
+      ></nz-option>
+    </nz-select>
+  </div>
+  <nz-divider></nz-divider>
+</div>
+
+
+<div nz-row style="display: flex;">
+  <div nz-col nzSpan="6" style="width:33%;"><label>Road Surface Condition</label><br/>
+    <nz-select [(ngModel)]="roadSurfaceId" formControlName="roadSurfaceId">
+      <nz-option       *ngFor="let option of roadSurfaces$ | async"
+      [nzLabel]="option.roadSurfaceName"
+      [nzValue]="option.roadSurfaceId"
+      ></nz-option>
+    </nz-select> </div>
+
+  <div nz-col nzSpan="6"><label>Land Mark type </label><br/>
+    <nz-select [(ngModel)]="landmarkTypeId" formControlName="landmarkTypeId">
+      <nz-option       *ngFor="let option of landMarkTypes$ | async"
+      [nzLabel]="option.landmarkName"
+      [nzValue]="option.landmarkTypeId"
+      ></nz-option>
+    </nz-select></div>
+
+    <div nz-col nzSpan="6"><label>Carriage way type </label><br/>
+      <nz-select [(ngModel)]="roadCarriagewayId" formControlName="roadCarriagewayId">
+        <nz-option       *ngFor="let option of roadCarriagewayTypes$ | async"
+        [nzLabel]="option.roadCarriagewayName"
+        [nzValue]="option.roadCarriagewayId"
+        ></nz-option>
+      </nz-select></div>
+
+<!--
+      <div nz-col nzSpan="6"><label>User type </label><br/>
+        <nz-select [(ngModel)]="user" formControlName="user">
+          <nz-option       *ngFor="let option of userMasters"
+          [nzLabel]="option.userName"
+          [nzValue]="option.userId"
+          ></nz-option>
+        </nz-select></div> -->
+</div>
+
+
+
+
+
+<div nz-row style="display: flex;">
+  <div nz-col nzSpan="6" style="width:33%;"><label>Junction Type</label><br/>
+    <nz-select [(ngModel)]="junctionTypeId" formControlName="junctionTypeId">
+      <nz-option       *ngFor="let option of junctionTypes$ | async"
+      [nzLabel]="option.junctionTypeName"
+      [nzValue]="option.junctionTypeId"
+      ></nz-option>
+    </nz-select> </div>
+  <div nz-col nzSpan="6" style="width:33%;"><label>Road speed limit </label><br/>
+    <nz-select [(ngModel)]="speedLimitId" formControlName="speedLimitId">
+      <nz-option       *ngFor="let option of roadspeeds$ | async"
+      [nzLabel]="option.speedLimitName"
+      [nzValue]="option.speedLimitId"
+      ></nz-option>
+    </nz-select></div>
+  <div nz-col nzSpan="6"><label>Light Condition </label><br/>
+    <nz-select [(ngModel)]="lightCondtionId" formControlName="lightCondtionId">
+      <nz-option       *ngFor="let option of lightConditions$ | async"
+      [nzLabel]="option.lightConditionName"
+      [nzValue]="option.lightConditionId"
+      ></nz-option>
+    </nz-select></div>
+
+    <div nz-col nzSpan="6"><label>Air condition </label><br/>
+      <nz-select [(ngModel)]="airConditionId" formControlName="airConditionId">
+        <nz-option       *ngFor="let option of airConditions$ | async"
+        [nzLabel]="option.airConditionName"
+        [nzValue]="option.airConditionId"
+        ></nz-option>
+      </nz-select></div>
+      <div nz-col nzSpan="6"><label>Terrian type </label><br/>
+        <nz-select [(ngModel)]="terrianTypeIdd" formControlName="terrianTypeId">
+          <nz-option       *ngFor="let option of terrianTypes$ | async"
+          [nzLabel]="option.terrianName"
+          [nzValue]="option.terrianTypeId"
+          ></nz-option>
+        </nz-select></div>
+
+
+
+</div>
+
+
+
+
+
+
+<div nz-row style="display: flex;">
+  <div nz-col nzSpan="6" style="width:33%;"><label>Cause of accident</label><br/>
+    <nz-select [(ngModel)]="selectedOption" formControlName="causeofAccidentId">
+      <nz-option      *ngFor="let option of options$ | async" [nzValue]="option.accidentCauseId" [nzLabel]="option.accidentCauseName"
+      ></nz-option>
+    </nz-select> </div>
+    <div nz-col  nzSpan="6" ><label>Location local name</label><br/>
+      <input style="width:200px !important" formControlName="accidentLocalName" nz-input placeholder="Invistigator name" [(ngModel)]="accidentLocalName" />
+    </div>
+    <div nz-col  nzSpan="6" ><label>Property Damage</label><br/>
+      <input style="width:200px !important" formControlName="propertyDamage" nz-input placeholder="property damage " [(ngModel)]="propertyDamage" />
+    </div>
+
+    <div nz-col  nzSpan="6" ><label>Number of vechile</label><br/>
+      <input style="width:200px !important" formControlName="numberOfVehicles" nz-input placeholder="number of vechcile name"  [(ngModel)]="numberOfVehicles"/>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div nz-row style="display: flex;">
+  <div nz-col  nzSpan="6" ><label>Number of victim</label><br/>
+    <input style="width:200px !important" formControlName="numberofVictims" nz-input placeholder="Number of victim " [(ngModel)]="numberofVictims" />
+  </div>
+
+</div>
+
+
+
+
+
+
+<div nz-row style="display: flex;justify-content: space-between;">
+  <div nz-col nzSpan="6"></div>
+  <div nz-col nzSpan="6"> </div>
+  <div nz-col nzSpan="6"> </div>
+  <div nz-col nzSpan="6"  style="display: flex;">
+    <app-button (click)="WelcomePage()" [buttonText]="'Back'" style="padding-right:15px;"></app-button>
+
+
+  <app-button  [buttonText]="'Next'" type="submit" ></app-button>
+  </div>
+</div>
+<!-- (click)="sucessNotification('Sucess')" -->
+</form>
+
+</div>

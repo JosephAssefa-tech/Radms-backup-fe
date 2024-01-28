@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">roadCarriagewayName English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.roadCarriagewayName.invalid && validateForm.controls.roadCarriagewayName.touched ? 'error' : ''">
+        <input nz-input formControlName="roadCarriagewayName" placeholder="roadCarriagewayName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >roadCarriagewayName Name</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="roadCarriagewayNameAm" placeholder="roadCarriagewayName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>roadCarriagewayName Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="roadCarriagewayNameOr" placeholder="roadCarriagewayName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >roadCarriagewayName  Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="roadCarriagewayNameSo" placeholder="roadCarriagewayName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >roadCarriagewayName Name Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="roadCarriagewayNameTi" placeholder="roadCarriagewayName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >roadCarriagewayName NameAfar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="roadCarriagewayNameAf" placeholder="roadCarriagewayName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  z

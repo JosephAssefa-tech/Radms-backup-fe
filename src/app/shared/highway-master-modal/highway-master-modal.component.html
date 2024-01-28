@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Health Condition English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.hname.invalid && validateForm.controls.hname.touched ? 'error' : ''">
+        <input nz-input formControlName="hname" placeholder="hname">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >Highway Master English</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="hnameAm" placeholder="hname">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>Highway master Afan Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="hnameOr" placeholder="hname">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >Highway master Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="hnameSo" placeholder="hname">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >Highway master Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="hnameTi" placeholder="hname">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >Highway master  Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="hnameAf" placeholder="hname">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

@@ -1,0 +1,22 @@
+.text-container {
+  display: flex; /* Use flexbox to align the two text elements */
+  justify-content: space-between; /* Add space between the elements */
+}
+
+.left-text {
+  padding-left: 15px; /* Add space to the right of the left text */
+}
+.right-text {
+  padding-right: 15px; /* Add space to the right of the left text */
+}
+canvas#MyChart {
+  height: 150px !important;
+}
+.ant-col-18 {
+
+  max-width: 100% !important;
+}
+
+nz-select {
+  width: 150px !important;
+}

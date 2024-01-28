@@ -1,0 +1,13 @@
+<div nz-col  nzSpan="6" ><label>Police Station</label><br/>
+  <nz-select
+  ngModel="selectedValue">
+  <ng-container  *ngFor="let option of dataList">
+    <nz-option
+    [nzLabel]="option.psname"
+    [nzValue]="option.psid"
+    ></nz-option>
+  </ng-container>
+
+
+  </nz-select>
+ </div>

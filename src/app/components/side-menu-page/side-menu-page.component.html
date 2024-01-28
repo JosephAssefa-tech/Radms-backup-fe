@@ -1,0 +1,59 @@
+<nz-layout>
+  <nz-sider class="menu-sidebar"
+  nzCollapsible
+  nzWidth="256px"
+  nzBreakpoint="md"
+  [(nzCollapsed)]="isCollapsed"
+  [nzTrigger]="null">
+  <div class="sidebar-logo">
+    <a href="https://ng.ant.design/" target="_blank">
+      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+      <h1>Radms</h1>
+    </a>
+  </div>
+    <ul nz-menu  nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item (click)="showComponent = true" style="color:white">
+        <i class="anticon anticon-dashboard"></i>
+        <a>Home</a>
+      </li>
+      <li nz-menu-item (click)="selectMenuItem('home')" style="color:white">
+        <i class="anticon anticon-user"></i>
+        <a>Locational Referencing System</a>
+      </li>
+      <li nz-menu-item (click)="selectMenuItem('accident')"  style="color:white">
+        <i class="anticon anticon-setting"></i>
+        <a>Accident Data Collection</a>
+      </li>
+      <li nz-menu-item (click)="selectMenuItem('welcome')" style="color:white">
+        <i class="anticon anticon-setting"></i>
+        <a>Report</a>
+      </li>
+      <li nz-menu-item (click)="showComponent = true" style="color:white">
+        <i class="anticon anticon-setting"></i>
+        <a>System Adminstration</a>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header style="background: #fff; padding-left: 15px;height: auto;">
+<h2><b>Hi, Welcome back!</b></h2>
+<p>Your accident data record system dashboard</p>
+<nz-tabset>
+  <nz-tab nzTitle="Home"></nz-tab>
+  <nz-tab nzTitle="Profile"></nz-tab>
+  <nz-tab nzTitle="Setting"></nz-tab>
+  <nz-tab nzTitle="Help">help</nz-tab>
+</nz-tabset>
+    </nz-header>
+    <nz-content style="margin: 24px 16px 0;; background: #dde1e5">
+      <div style="padding: 24px; min-height: 360px;">
+
+<ng-container >
+
+<router-outlet></router-outlet>
+</ng-container>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">Ant Design ©2019 Created by Ant UED</nz-footer>
+  </nz-layout>
+</nz-layout>

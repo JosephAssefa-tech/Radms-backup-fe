@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">vehicle MovementMaster English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.vehicleMovementMasterName.invalid && validateForm.controls.vehicleMovementMasterName.touched ? 'error' : ''">
+        <input nz-input formControlName="vehicleMovementMasterName" placeholder="vehicleMovementMasterName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >vehicle MovementMaster Name Amharic</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="vehicleMovementMasterNameAm" placeholder="vehicleMovementMasterName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>vehicle MovementMaster Name Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleMovementMasterNameOr" placeholder="vehicleMovementMasterName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >vehicle MovementMaster Name Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleMovementMasterNameSo" placeholder="vehicleMovementMasterName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >vehicle MovementMaster Name Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleMovementMasterNameTi" placeholder="vehicleMovementMasterName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >vehicleMovementMasterNameAfar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleMovementMasterNameAf" placeholder="vehicleMovementMasterName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

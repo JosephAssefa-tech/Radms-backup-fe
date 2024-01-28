@@ -1,0 +1,61 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <div style="justify-content:space-between;display: flex;">
+    <div >
+      <label>Pleaase select Zone</label>
+    </div>
+    <div>
+      <nz-select formControlName="zoneId" [(ngModel)]="zoneId">
+        <nz-option *ngFor="let option of zonesMaster$ | async" [nzLabel]="option.zoneName" [nzValue]="option.zoneId"></nz-option>
+      </nz-select>
+    </div>
+  </div>
+
+
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Woreda Name English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.woredaName.invalid && validateForm.controls.woredaName.touched ? 'error' : ''">
+        <input nz-input formControlName="woredaName" placeholder="woreda name">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label >የክልል ስም</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="woredaNameAm" placeholder="የክልል ስም">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Woreda Afan Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="woredaNameOr" placeholder="region name">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Woreda Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="woredaNameSo" placeholder="region name">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Woreda Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="woredaNameTi" placeholder="region name">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Woreda Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="woredaNameAf" placeholder="region name">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid">{{buttonLabel}}</button>
+</form>
+

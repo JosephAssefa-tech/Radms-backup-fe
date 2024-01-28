@@ -1,0 +1,52 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzRequired]="true">Health Condition English</nz-form-label>
+    <nz-form-control [nzErrorTip]="'Please input region name!'"
+                     [nzValidateStatus]="validateForm.controls.healthConditionName.invalid && validateForm.controls.healthConditionName.touched ? 'error' : ''">
+      <input nz-input formControlName="healthConditionName" placeholder="healthConditionName">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >የጤንነት ሁኒታ</nz-form-label>
+    <nz-form-control                     >
+      <input nz-input formControlName="healthConditionNameAm" placeholder="healthConditionName">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label>Health Afan Oroma</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="healthConditionNameOr" placeholder="healthConditionName">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >Health Condition Somalia</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="healthConditionNameSo" placeholder="healthConditionName">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >Health Condition Tigiray</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="healthConditionNameTi" placeholder="healthConditionName">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label >Health Condition Afar</nz-form-label>
+    <nz-form-control
+>
+      <input nz-input formControlName="healthConditionNameAf" placeholder="healthConditionName">
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+  <!-- <button nz-button nzType="primary" (click)="onSave()">
+    {{ isEditMode ? 'Update' : 'Add' }}
+  </button> -->
+</form>

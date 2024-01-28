@@ -1,0 +1,54 @@
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">light ConditionName English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.lightConditionName.invalid && validateForm.controls.lightConditionName.touched ? 'error' : ''">
+        <input nz-input formControlName="lightConditionName" placeholder="lightConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >light ConditionName Amharic</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="lightConditionNameAm" placeholder="lightConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>light ConditionName Afan oromo</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="lightConditionNameOr" placeholder="lightConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >light ConditionName Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="lightConditionNameSo" placeholder="lightConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >light ConditionName Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="lightConditionNameTi" placeholder="lightConditionName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >light ConditionName Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="lightConditionNameAf" placeholder="lightConditionName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

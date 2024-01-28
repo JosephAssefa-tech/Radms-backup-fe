@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">DriverExperience Name English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.accidentCauseName.invalid && validateForm.controls.accidentCauseName.touched ? 'error' : ''">
+        <input nz-input formControlName="accidentCauseName" placeholder="accidentCauseName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >accidentCauseName Name</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="accidentCauseNameAm" placeholder="accidentCauseName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>accidentCauseName Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="accidentCauseNameOr" placeholder="accidentCauseName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >accidentCauseName  Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="accidentCauseNameSo" placeholder="accidentCauseName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >accidentCauseName  Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="accidentCauseNameTi" placeholder="accidentCauseName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >accidentCauseName </nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="accidentCauseNameAf" placeholder="accidentCauseName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

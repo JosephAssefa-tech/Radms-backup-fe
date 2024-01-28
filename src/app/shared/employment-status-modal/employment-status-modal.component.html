@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">DriverExperience Name English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.employmentStatusName.invalid && validateForm.controls.employmentStatusName.touched ? 'error' : ''">
+        <input nz-input formControlName="employmentStatusName" placeholder="employmentStatusName">
+      </nz-form-control>
+    </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-label >employmentStatusName Name</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="employmentStatusNameAm" placeholder="employmentStatusName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>employmentStatusName Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="employmentStatusNameOr" placeholder="employmentStatusName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >employmentStatusName  Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="employmentStatusNameSo" placeholder="employmentStatusName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >employmentStatusName  Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="employmentStatusNameTi" placeholder="employmentStatusName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >employmentStatusName </nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="employmentStatusNameAf" placeholder="employmentStatusName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

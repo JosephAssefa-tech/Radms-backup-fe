@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">speed LimitName English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.speedLimitName.invalid && validateForm.controls.speedLimitName.touched ? 'error' : ''">
+        <input nz-input formControlName="speedLimitName" placeholder="speedLimitName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >speed LimitName Amharic</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="speedLimitNameAm" placeholder="speedLimitName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>speed LimitNameOroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="speedLimitNameOr" placeholder="speedLimitName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >speed LimitName Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="speedLimitNameSo" placeholder="speedLimitName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >speedLimitNameTigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="speedLimitNameTi" placeholder="speedLimitName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >speed LimitNameAfar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="speedLimitNameAf" placeholder="speedLimitName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  

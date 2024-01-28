@@ -1,0 +1,26 @@
+
+<button class="add-region" nz-button nzType="primary" (click)="showModal('Add Subcity')">Add Subcity</button>
+<nz-table #middleTable nzSize="middle" [nzData]="subCities">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Subcities Names</th>
+      <th>City Names</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subcity of subCities">
+      <td>{{ subcity.subCityId }}</td>
+      <td>{{ subcity.subCityName }}</td>
+      <td>{{ subcity.city?.cityName }}</td>
+      <td>
+        <button class="edit-button"  (click)="editSubCity(subcity)"> <i class="icon-edit"></i>
+          Edit</button> 
+          <span class="button-spacing"></span>
+        <a class="delete" (click)="openDeleteConfirmation(subcity.subCityId)"> <i nz-icon nzType="delete" class="delete-icon"></i>
+          <span class="delete-text">Delete</span></a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

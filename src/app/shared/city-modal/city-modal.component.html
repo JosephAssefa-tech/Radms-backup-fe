@@ -1,0 +1,70 @@
+<div class="form-item-container">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+     <div style="justify-content:space-between;display: flex;">
+      <div >
+        <label>Pleaase select Woreda</label>
+      </div>
+      <div style="margin-bottom: 19px;">
+        <nz-select formControlName="woredaId" [(ngModel)]="woredaId">
+          <nz-option *ngFor="let option of woredaMasters$ | async" [nzLabel]="option.woredaName" [nzValue]="option.woredaId"></nz-option>
+        </nz-select>
+      </div>
+
+     </div>
+
+
+
+
+
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">City Name English</nz-form-label>
+        <nz-form-control [nzErrorTip]="'Please input region name!'"
+                         [nzValidateStatus]="validateForm.controls.cityName.invalid && validateForm.controls.cityName.touched ? 'error' : ''">
+          <input nz-input formControlName="cityName" placeholder="zoneName name">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label >የከተማ ስም</nz-form-label>
+        <nz-form-control                     >
+          <input nz-input formControlName="cityNameAm" placeholder="የክልል ስም">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label >City Name Afan Oroma</nz-form-label>
+        <nz-form-control
+    >
+          <input nz-input formControlName="cityNameOr" placeholder="region name">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label >City Name Somalia</nz-form-label>
+        <nz-form-control
+    >
+          <input nz-input formControlName="cityNameSo" placeholder="region name">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label >City Name Tigiray</nz-form-label>
+        <nz-form-control
+    >
+          <input nz-input formControlName="cityNameTi" placeholder="region name">
+        </nz-form-control>
+
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label >City Name Afar</nz-form-label>
+        <nz-form-control
+    >
+          <input nz-input formControlName="cityNameAf" placeholder="region name">
+        </nz-form-control>
+      </nz-form-item>
+      <button nz-button nzType="primary" [disabled]="!validateForm.valid">{{buttonLabel}}</button>
+
+  </form>
+</div>
+
+

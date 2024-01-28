@@ -1,0 +1,204 @@
+<nz-layout>
+  <nz-sider class="menu-sidebar"
+  nzCollapsible
+  nzWidth="256px"
+  nzBreakpoint="md"
+  [(nzCollapsed)]="isCollapsed"
+  [nzTrigger]="null">
+  <div class="sidebar-logo">
+
+      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+      <span>{{ getTranslation('Radms') }}</span>
+
+  </div>
+    <ul nz-menu  nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item (click)="selectMenuItem('home')" style="color:white" nzIcon="home"><span nz-icon [nzType]="'home'"></span>
+        <i class="anticon anticon-dashboard"></i>
+        <a>{{ getTranslation('Home') }}</a>;
+        <!-- <a>Home</a> -->
+      </li>
+      <li nz-menu-item (click)="selectMenuItem('accident-data')" style="color: white">
+        <i nz-icon nzType="car" style="margin-right: 8px;"></i>
+        <a>{{ getTranslation('Accident Data Collection') }}</a>
+      </li>
+      <li nz-submenu [nzTitle]="getTranslation('locational referencing system')" nzIcon="environment">
+        <ul>
+          <li nz-menu-item (click)="regionTable()">Region Master</li>
+          <li nz-menu-item (click)="zoneTable()">Zone Master</li>
+          <li nz-menu-item (click)="woredaTable()">Woreda Master </li>
+          <li nz-menu-item (click)="cityTable()">City Master</li>
+          <li nz-menu-item (click)="subcityTable()">Subcity Master</li>
+
+        </ul>
+      </li>
+      <li nz-submenu [nzTitle]="getTranslation('vechile')" nzIcon="car">
+        <ul>
+          <li nz-menu-item (click)="vechileMaster()">Vechile Master </li>
+          <li nz-menu-item (click)="vechileDefect()">Vechile Defect </li>
+          <li nz-menu-item (click)="vechileMovement()">Vehicle Movement Master</li>
+          <li nz-menu-item (click)="vechileOwnership()">Vechile Ownership</li>
+          <li nz-menu-item (click)="vechileRelation()">Vechile Relation </li>
+          <li nz-menu-item (click)="vechileServiceAge()">Vechile Service Age </li>
+          <li nz-menu-item (click)="speedLimit()">Speed Limit </li>
+          </ul>
+        </li>
+        <li nz-submenu [nzTitle]="getTranslation('Roads')" nzIcon="fork">
+          <ul> 
+            <li nz-menu-item (click)="highwayType()">Highway Type </li>
+            <li nz-menu-item (click)="junctionType()">Junction Type </li>
+            <li nz-menu-item (click)="landmarkType()">Landmark Type</li>
+            <li nz-menu-item (click)="highwayMaster()">Highway Master </li>
+            <li nz-menu-item (click)="roadcariagewayType()">RoadCarriageway Type</li>
+          </ul>
+         </li>
+      <li nz-submenu [nzTitle]="getTranslation('Conditions')" nzIcon="cloud">
+        <ul>
+          <li nz-menu-item (click)="roadSurface()">Road Surface Condition</li>
+          <li nz-menu-item (click)="weatheronditionTable()">Weather Condition Type </li>
+          <!-- <li nz-menu-item (click)="RoadSurfaceTable()">Road Surface Condition</li> -->
+          <li nz-menu-item (click)="LightConditionTable()">Light Condition </li>
+          <li nz-menu-item (click)="healthTable()">HealthCondition</li>
+          <li nz-menu-item (click)="AirTable()">AirCondition Type</li>
+
+
+
+        </ul>
+      </li>
+
+
+        <li nz-submenu [nzTitle]="getTranslation('Driver')" nzIcon="contacts">
+          <ul>
+            <li nz-menu-item (click)="licenseLevel()">Licence Level </li>
+            <li nz-menu-item (click)="educationLevel()">Education Level </li>
+            <li nz-menu-item (click)="driverExperience()">Driver Experience </li>
+            <li nz-menu-item (click)="driverLicenseCategory()">Driving Licience Category</li>
+            </ul>
+          </li>
+      <li nz-submenu [nzTitle]="getTranslation('looksup')" nzIcon="appstore">
+        <ul>
+          <li nz-menu-item (click)="accidentCause()">Accident Cause </li>
+          <li nz-menu-item (click)="accidentType()">Accident Type</li>
+
+          <li nz-menu-item (click)="collisionType()">Collision Type</li>
+
+
+          <li nz-menu-item (click)="employmentStatus()">Employment Status</li>
+
+         
+          <li nz-menu-item (click)="impactType()">Impact Type</li>
+
+
+
+          <li nz-menu-item (click)="pavementType()">Pavemenet Type</li>
+          <li nz-menu-item (click)="pedestrianMovement()">Pedestrian Movement </li>
+      
+
+          <li nz-menu-item (click)="seatingType()">Seating Type </li>
+          <li nz-menu-item (click)="severityLevel()">Severity Level </li>
+
+          <li nz-menu-item (click)="terianType()">Terian Type</li>
+
+
+
+
+          <!-- <li nz-menu-item (click)="userType()">User Type </li> -->
+
+          <li nz-menu-item (click)="victimMovement()">Victim Movement </li>
+          <li nz-menu-item (click)="victimType()">Victim Type</li>
+
+
+
+
+        </ul>
+      </li>
+ 
+       <li nz-submenu [nzTitle]="getTranslation('Users')" nzIcon="user">
+      <!-- <ul>
+        <li nz-menu-item (click)="regionTable()">User Master </li>
+        <li nz-menu-item (click)="regionTable()">User Role transaction </li>
+        <li nz-menu-item (click)="woredaTable()">User Type </li>
+
+      </ul> -->
+     </li>
+ 
+    
+      <li nz-menu-item (click)="selectMenuItem('settings')" style="color: white">
+        <i nz-icon nzType="file-text" style="margin-right: 8px;"></i>
+        <a>{{ getTranslation('Report') }}</a>
+      </li>
+      
+
+      <li nz-menu-item (click)="selectMenuItem('settings')" style="color: white">
+        <i nz-icon nzType="setting" style="margin-right: 8px;"></i>
+        <a>{{ getTranslation('System Administration') }}</a>
+      </li>
+      
+      
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header style="background: #fff; padding-left: 15px;height: auto;">
+      <div style="display:flex;justify-content: space-between;padding-right:15px;">
+
+        <div class="language">
+          {{ getTranslation('Language') }}
+          <nz-select [(ngModel)]="selectedLanguage" (ngModelChange)="switchLanguage(selectedLanguage)">
+            <nz-option nzValue="english" nzLabel="English"></nz-option>
+            <nz-option nzValue="amharic" nzLabel="አማርኛ"></nz-option>
+            <nz-option nzValue="tigrya" nzLabel="Tigryan"></nz-option>
+            <nz-option nzValue="oromo" nzLabel="Afan Oromo"></nz-option>
+          </nz-select>
+        </div>
+
+      </div>
+
+<h1 class="moving-text"><i>{{ getTranslation('Hi Welcome back Your accident data record system dashboard') }}</i></h1>
+<div class="container" style="display:flex;justify-content: space-between;">
+  <nz-tabset>
+    <nz-tab [nzTitle]="getTranslation('Home')"></nz-tab>
+    <nz-tab [nzTitle]="getTranslation('Profile')"></nz-tab>
+    <nz-tab [nzTitle]="getTranslation('Setting')"></nz-tab>
+    <nz-tab [nzTitle]="getTranslation('Help')">help</nz-tab>
+
+  </nz-tabset>
+  <div>
+    <nz-date-picker
+      [(ngModel)]="startDate"
+      nzShowTime
+      nzFormat="yyyy-MM-dd HH:mm:ss"
+      nzPlaceHolder="Start"
+    ></nz-date-picker>
+    <nz-date-picker
+      #endDatePicker
+      [(ngModel)]="endDate"
+      nzShowTime
+      nzFormat="yyyy-MM-dd HH:mm:ss"
+      nzPlaceHolder="End"
+    ></nz-date-picker>
+    <button style="margin-left:15px" nz-button (click)="onFilterButtonClick(startDate, endDate)">
+      <i nz-icon nzType="filter" class="filter-icon"></i>
+      {{ getTranslation('Filter') }}
+    </button>
+    
+  </div>
+  
+  <nz-upload nzAccept=".xlsx">
+    <button nz-button>
+      <i nz-icon nzType="import"></i>  {{ getTranslation('Import Data') }}
+    </button>
+  </nz-upload>
+
+</div>
+
+    </nz-header>
+
+    <nz-content style="margin: 24px 16px 0;; background: #dde1e5">
+      <div style="padding: 24px; min-height: 360px;">
+
+        <router-outlet></router-outlet>
+
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">Ant Design ©2019 Created by Ant UED</nz-footer>
+  </nz-layout>
+</nz-layout>

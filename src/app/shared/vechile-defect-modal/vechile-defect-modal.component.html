@@ -1,0 +1,53 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Vehicle DefectName English</nz-form-label>
+      <nz-form-control [nzErrorTip]="'Please input region name!'"
+                       [nzValidateStatus]="validateForm.controls.vehicleDefectName.invalid && validateForm.controls.vehicleDefectName.touched ? 'error' : ''">
+        <input nz-input formControlName="vehicleDefectName" placeholder="VehicleDefectName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >VehicleDefectName Amharic</nz-form-label>
+      <nz-form-control                     >
+        <input nz-input formControlName="vehicleDefectNameAm" placeholder="VehicleDefectName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label>Vehicle DefectName Oroma</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleDefectNameOr" placeholder="VehicleDefectName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >VehicleDefectName Somalia</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleDefectNameSo" placeholder="VehicleDefectName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >VehicleDefectName Tigiray</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleDefectNameTi" placeholder="VehicleDefectName">
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label >Vehicle DefectName Afar</nz-form-label>
+      <nz-form-control
+  >
+        <input nz-input formControlName="vehicleDefectNameAf" placeholder="VehicleDefectName">
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!validateForm.valid" >{{buttonLabel}}</button>
+    <!-- <button nz-button nzType="primary" (click)="onSave()">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button> -->
+  </form>
+  
